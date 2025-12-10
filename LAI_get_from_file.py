@@ -5,7 +5,7 @@ import glob
 import seaborn as sns
 from matplotlib import pyplot as plt
 
-dir = 'C:/Users/mqalborn/Desktop/PISTACHIO/LAI/2025/*.TXT'
+dir = 'C:/Users/mqalborn/Desktop/ET_3SEB/PISTACHIO/LAI/2025/*.TXT'
 paths = glob.glob(dir)
 
 docker = []
@@ -38,7 +38,7 @@ data_all_pivot = pd.pivot_table(
     index=['DATE', 'GPSLAT', 'GPSLONG', 'block'],
     aggfunc=np.mean)
 
-data_all_pivot.to_csv('C:/Users/mqalborn/Desktop/PISTACHIO/LAI/2025/resume_v2.csv')
+# data_all_pivot.to_csv('C:/Users/mqalborn/Desktop/PISTACHIO/LAI/2025/resume_v2.csv')
 
 sns.scatterplot(data=data_all, x='DATE', y='LAI', hue='source')
 plt.show()
